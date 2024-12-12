@@ -1,0 +1,54 @@
+<% layout("/layouts/boilerplate.ejs") %>
+    <div class="allNotes row mt-3 mb-1">
+        <% let userHasNotes=false; %>
+            <% for(let note of allNotes) { %>
+                <% if(currUser && note.owner._id.equals(currUser._id)) { %>
+                    <% userHasNotes=true; %>
+                        <div class="card mt-2 mb-3" style="width: 95%; margin: auto;">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <%= note.title %>
+                                </h4>
+                                <p class="card-text">
+                                    <%= note.description %>
+                                </p>
+                                <div class="button-container d-flex gap-3">
+                                    <form method="GET" action="/notes/<%=note.id%>/edit">
+                                        <button class="btn edit-btn btn-outline-success btn-sm">Edit Note</button>
+                                    </form>
+                                    <form method="POST" action="/notes/<%=note.id%>?_method=DELETE">
+                                        <button class="btn delete-btn btn-outline-danger btn-sm">Delete Note</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                            <% } %>
+                                <% if (currUser && !userHasNotes) { %>
+                                    <form action="/notes/new">
+                                        <div class="d-grid">
+                                            <button class="btn btn-lg btn-outline-light newIndex">Create a New
+                                                Note</button>
+                                        </div>
+                                    </form>
+                                    <% } %>
+                                        <% if (!currUser) { %>
+                                            <form action="/signup">
+                                                <div class="d-grid">
+                                                    <button
+                                                        class="btn btn-lg btn-outline-info signupIndex"><b>Register</b>
+                                                        now on
+                                                        NoteDoodle...</button>
+                                                </div>
+                                            </form>
+                                            <hr>
+                                            <form action="/login">
+                                                <div class="d-grid mt-2">
+                                                    <button
+                                                        class="btn btn-lg btn-outline-warning loginIndex"><b>Login</b>
+                                                        to your
+                                                        account on NoteDoodle...</button>
+                                                </div>
+                                            </form>
+                                            <% } %>
+    </div>

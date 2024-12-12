@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/notes"><img class="fa-note-sticky"
+        src="https://cdn-icons-png.flaticon.com/512/3300/3300052.png" alt="logo-icon" style="height: 2.5rem;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/notes" style="opacity: 1; font-weight: 500">All Notes</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/notes/new">Add a new note</a>
+        </li>
+        <% if(!currUser) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">SignUp</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <% } %>
+            <% if(currUser) { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+              <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

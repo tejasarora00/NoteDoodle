@@ -1,0 +1,92 @@
+/* Body */
+body {
+    /* background-color: rgb(36, 0, 36) !important; */
+    background-color: yellow !important;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+/* Navbar */
+.fa-note-sticky {
+    margin-left: 0.5rem;
+    color: #570057;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+.nav-item {
+    opacity: 0.8;
+}
+
+.nav-item:hover {
+    opacity: 1;
+    font-weight: 500;
+}
+
+
+/* Cards */
+.card {
+    border-radius: 1rem !important;
+    border-color: #f700ff !important;
+    border-width: 0.3rem !important;
+}
+
+.allNotes {
+    margin: auto !important;
+}
+
+.edit-btn,
+.delete-btn {
+    border-radius: 0 !important;
+    font-family: Verdana, Tahoma, sans-serif !important;
+}
+
+.card-title {
+    text-decoration: solid;
+}
+
+
+/* New And Edit Page */
+.new-edit-note-head {
+    color: white;
+    text-align: center;
+    font-family: cursive !important;
+}
+
+.add-edit-btn {
+    font-weight: bolder !important;
+    background-color: #F800FF !important;
+    border: white !important;
+    border-width: 2rem !important;
+}
+
+
+/* SignUp, Login */
+.form-label {
+    color: white;
+}
+
+.form-control {
+    border: 4px solid pink !important;
+}
+
+#basic-addon1:hover{
+    cursor: pointer;
+}
+
+
+/* Index ifNotSignedIn*/
+.loginIndex {
+    border: 5px solid #c19100 !important;
+}
+
+.signupIndex {
+    border: 5px solid #17a2b8 !important;
+}
+
+/* Index ifNoNoteCreated */
+.newIndex {
+    border: 5px solid #F800FF !important;
+}
